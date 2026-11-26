@@ -4,320 +4,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EconoMente | Aprende Economía</title>
+<title>EconoMente - Aprende Economía</title>
 
 <style>
 :root {
-  --bg: #f4f7fc;
-  --primary: #6558dc;
-  --secondary: #18b99b;
-  --dark: #202743;
-  --muted: #78819b;
-  --white: #ffffff;
-  --yellow: #ffd166;
-  --pink: #ff7895;
-  --shadow: 0 8px 25px rgba(35,45,90,.08);
+ --primary:#6558dc;
+ --secondary:#18b99b;
+ --dark:#202743;
+ --bg:#f4f6fc;
+ --yellow:#ffd166;
+ --white:#fff;
+ --muted:#78819b;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing:border-box; }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: var(--dark);
+ margin:0;
+ background:var(--bg);
+ color:var(--dark);
+ font-family:'Segoe UI',Arial,sans-serif;
 }
 
-button { font-family: inherit; cursor: pointer; }
+button,input { font-family:inherit; }
+
+button { cursor:pointer; }
+
+.top-glossary {
+ position:fixed;
+ top:12px;
+ left:12px;
+ z-index:1000;
+ padding:13px 17px;
+ background:var(--yellow);
+ color:#35304b;
+ border:0;
+ border-radius:12px;
+ font-weight:bold;
+ box-shadow:0 4px 15px #0002;
+}
 
 header {
-  background: linear-gradient(120deg,#6558dc,#8375f4);
-  color: white;
-  padding: 32px 24px 35px;
-  text-align: center;
-  border-radius: 0 0 30px 30px;
+ background:linear-gradient(120deg,#6558dc,#9283f5);
+ color:white;
+ text-align:center;
+ padding:35px 20px;
+ border-radius:0 0 30px 30px;
 }
 
 header h1 {
-  font-size: 38px;
-  margin: 12px 0;
+ font-size:40px;
+ margin:10px 0;
 }
 
 header p {
-  opacity: .9;
-  margin: 0;
-}
-
-.top-glossary {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 1000;
-  border: none;
-  border-radius: 12px;
-  background: var(--yellow);
-  color: #3c3350;
-  padding: 12px 15px;
-  font-weight: bold;
-  box-shadow: var(--shadow);
+ margin:5px;
+ opacity:.9;
 }
 
 .container {
-  width: min(1050px,94%);
-  margin: 25px auto;
+ max-width:1050px;
+ width:94%;
+ margin:25px auto;
 }
 
+.hidden { display:none!important; }
+
 .stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-  margin: 25px 0;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:14px;
+ margin:25px 0;
 }
 
 .stat {
-  background: white;
-  padding: 18px;
-  border-radius: 17px;
-  box-shadow: var(--shadow);
-  text-align: center;
+ background:white;
+ padding:18px;
+ text-align:center;
+ border-radius:17px;
+ box-shadow:0 5px 20px #0000000c;
 }
 
 .stat strong {
-  display: block;
-  font-size: 25px;
-  color: var(--primary);
+ display:block;
+ font-size:27px;
+ color:var(--primary);
 }
 
-.stat span { color: var(--muted); font-size: 13px; }
+.stat span {
+ color:var(--muted);
+ font-size:13px;
+}
 
 .section-title {
-  margin: 30px 0 15px;
-  font-size: 23px;
+ margin:30px 0 16px;
 }
 
 .games {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
-  gap: 17px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:17px;
 }
 
 .game-card {
-  background: white;
-  border-radius: 20px;
-  padding: 23px;
-  box-shadow: var(--shadow);
-  transition: .2s;
-  cursor: pointer;
-  border: 2px solid transparent;
+ background:white;
+ padding:24px;
+ border-radius:20px;
+ box-shadow:0 5px 20px #0000000c;
+ border:2px solid transparent;
+ transition:.2s;
+ cursor:pointer;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
+ transform:translateY(-4px);
+ border-color:var(--primary);
 }
 
-.game-icon { font-size: 34px; }
+.game-icon { font-size:38px; }
 
-.game-card h3 { margin-bottom: 7px; }
-.game-card p { color: var(--muted); font-size: 14px; }
+.game-card h3 { margin-bottom:7px; }
+
+.game-card p {
+ color:var(--muted);
+ font-size:14px;
+ line-height:1.5;
+}
 
 .panel {
-  background: white;
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
+ background:white;
+ padding:25px;
+ border-radius:20px;
+ margin:20px 0;
+ box-shadow:0 5px 20px #0000000c;
 }
 
-.hidden { display: none !important; }
-
 .primary-btn {
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 11px;
-  padding: 12px 20px;
-  font-weight: bold;
-  margin-top: 10px;
+ background:var(--primary);
+ color:white;
+ border:0;
+ border-radius:11px;
+ padding:12px 20px;
+ font-weight:bold;
+ margin:8px 5px 8px 0;
 }
 
 .secondary-btn {
-  background: #eeeaff;
-  color: var(--primary);
-  border: none;
-  border-radius: 10px;
-  padding: 10px 15px;
-  font-weight: bold;
+ background:#eeeaff;
+ color:var(--primary);
+ border:0;
+ border-radius:10px;
+ padding:11px 16px;
+ font-weight:bold;
+ margin:5px 0;
 }
 
 .back-btn {
-  background: #f0efff;
-  color: var(--primary);
-  border: none;
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin-bottom: 15px;
-}
-
-input {
-  padding: 13px;
-  border: 2px solid #e3e5f0;
-  border-radius: 10px;
-  font-size: 16px;
-  max-width: 100%;
-}
-
-input:focus {
-  outline: none;
-  border-color: var(--primary);
+ background:#eeeaff;
+ color:var(--primary);
+ border:0;
+ border-radius:10px;
+ padding:11px 16px;
+ font-weight:bold;
+ margin-bottom:15px;
 }
 
 .definition {
-  background: #f0efff;
-  padding: 17px;
-  border-left: 4px solid var(--primary);
-  border-radius: 10px;
-  margin: 15px 0;
+ background:#f0efff;
+ border-left:4px solid var(--primary);
+ padding:18px;
+ border-radius:10px;
+ line-height:1.6;
+ margin:15px 0;
 }
 
 .feedback {
-  font-weight: bold;
-  margin: 15px 0;
+ font-weight:bold;
+ margin:15px 0;
+ min-height:22px;
 }
 
-.word-grid {
-  display: grid;
-  grid-template-columns: repeat(12,1fr);
-  gap: 4px;
-  max-width: 470px;
-  margin: 20px auto;
+input.search {
+ width:100%;
+ padding:13px;
+ border:2px solid #e3e5f0;
+ border-radius:10px;
+ font-size:16px;
+ margin:10px 0 15px;
 }
-
-.cell {
-  aspect-ratio: 1;
-  border: none;
-  border-radius: 5px;
-  background: #eeeaff;
-  font-weight: bold;
-  color: var(--dark);
-  font-size: 13px;
-  padding: 0;
-}
-
-.cell.selected {
-  background: var(--yellow);
-}
-
-.cell.found {
-  background: #a6ebd7;
-}
-
-.crossword {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0,1fr));
-  gap: 2px;
-  max-width: 480px;
-  margin: 20px auto;
-}
-
-.cross-cell {
-  aspect-ratio: 1;
-  min-width: 0;
-  border: 1px solid #d9dbea;
-  text-align: center;
-  width: 100%;
-  background: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 3px;
-}
-
-.cross-cell.blocked {
-  background: #30344e;
-  border-color: #30344e;
-}
-
-.cross-cell.active {
-  background: #fff0bc;
-  border-color: var(--primary);
-}
-
-.cross-cell:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: -2px;
-}
-
-.clue {
-  background: #f5f5ff;
-  padding: 13px;
-  border-radius: 10px;
-  margin: 9px 0;
-  font-size: 14px;
-}
-
-.quiz-option {
-  display: block;
-  width: 100%;
-  padding: 13px;
-  margin: 8px 0;
-  border: 2px solid #e4e5f1;
-  background: white;
-  border-radius: 10px;
-  text-align: left;
-  font-size: 15px;
-}
-
-.quiz-option:hover { border-color: var(--primary); }
 
 .glossary-item {
-  padding: 17px;
-  border-bottom: 1px solid #eeeef4;
+ padding:17px 5px;
+ border-bottom:1px solid #eeeef4;
+ line-height:1.5;
 }
 
 .glossary-item h3 {
-  color: var(--primary);
-  margin: 0 0 7px;
+ color:var(--primary);
+ margin:0 0 7px;
 }
 
 .glossary-item p {
-  margin: 0;
-  line-height: 1.5;
-  color: #555e75;
+ color:#555e75;
+ margin:0;
 }
 
-.search {
-  width: 100%;
-  margin: 10px 0 15px;
+/* SOPA DE LETRAS */
+
+.word-grid {
+ display:grid;
+ grid-template-columns:repeat(12,minmax(0,1fr));
+ gap:5px;
+ max-width:490px;
+ margin:25px auto;
+ user-select:none;
 }
 
-.flashcard {
-  background: linear-gradient(130deg,#6558dc,#9b8cf6);
-  color: white;
-  padding: 35px 15px;
-  text-align: center;
-  border-radius: 20px;
-  min-height: 160px;
-  display: grid;
-  place-items: center;
-  font-size: 23px;
-  font-weight: bold;
+.cell {
+ aspect-ratio:1;
+ min-width:0;
+ border:0;
+ border-radius:6px;
+ background:#eeeaff;
+ color:var(--dark);
+ font-size:clamp(11px,2.5vw,17px);
+ font-weight:bold;
+ padding:0;
+ touch-action:manipulation;
+ transition:.1s;
+}
+
+.cell.selected {
+ background:var(--yellow);
+}
+
+.cell.found {
+ background:#a6ebd7;
+ color:#126d58;
+}
+
+.word-list {
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin:15px 0;
+}
+
+.word-tag {
+ padding:9px 12px;
+ background:#eeeaff;
+ border-radius:8px;
+ font-size:13px;
+}
+
+.word-tag.done {
+ background:#c9f3e5;
+ text-decoration:line-through;
+ color:#18745c;
+}
+
+.instructions {
+ background:#fff6dc;
+ padding:14px;
+ border-radius:10px;
+ font-size:14px;
+ line-height:1.6;
+}
+
+/* CRUCIGRAMA */
+
+.crossword {
+ display:grid;
+ grid-template-columns:repeat(12,minmax(0,1fr));
+ gap:2px;
+ max-width:480px;
+ margin:20px auto;
+}
+
+.cross-cell {
+ aspect-ratio:1;
+ width:100%;
+ min-width:0;
+ padding:0;
+ text-align:center;
+ text-transform:uppercase;
+ font-size:clamp(11px,2.5vw,16px);
+ font-weight:bold;
+ border:1px solid #d9dbea;
+ border-radius:3px;
+ background:white;
+}
+
+.cross-cell.blocked {
+ background:#30344e;
+ border-color:#30344e;
+}
+
+.cross-cell:focus {
+ outline:2px solid var(--primary);
+}
+
+.clue {
+ background:#f4f3ff;
+ padding:14px;
+ border-radius:10px;
+ margin:10px 0;
+ line-height:1.5;
 }
 
 footer {
-  text-align: center;
-  color: var(--muted);
-  padding: 35px;
-  font-size: 13px;
+ text-align:center;
+ color:var(--muted);
+ padding:35px;
+ font-size:13px;
 }
 
 @media(max-width:550px) {
-  header { padding-top: 65px; }
-  header h1 { font-size: 30px; }
-  .stats { gap: 7px; }
-  .stat { padding: 12px 5px; }
-  .stat strong { font-size: 20px; }
-  .cross-cell { font-size: 11px; }
+ header { padding-top:70px; }
+ header h1 { font-size:31px; }
+ .stats { gap:7px; }
+ .stat { padding:12px 5px; }
+ .stat strong { font-size:21px; }
+ .word-grid { gap:3px; }
+ .crossword { gap:1px; }
+ .panel { padding:17px; }
 }
 </style>
 </head>
@@ -325,251 +335,307 @@ footer {
 <body>
 
 <button class="top-glossary" onclick="showGlossary()">
-  📚 Glosario
+ 📚 Glosario
 </button>
 
 <header>
-  <div style="font-size:38px">💰📈</div>
-  <h1>EconoMente</h1>
-  <p>¡Aprender economía nunca fue tan divertido!</p>
-  <p style="margin-top:10px;font-size:13px">
-    Descubrí el mundo financiero jugando.
-  </p>
+ <div style="font-size:40px">💰📈</div>
+ <h1>EconoMente</h1>
+ <p>¡Aprender economía nunca fue tan divertido!</p>
+ <p style="font-size:13px;margin-top:10px">
+  Descubrí el mundo financiero jugando.
+ </p>
 </header>
 
 <div class="container">
 
-  <div class="stats">
-    <div class="stat">
-      <strong id="score">0</strong>
-      <span>Puntos obtenidos</span>
-    </div>
-    <div class="stat">
-      <strong id="completed">0</strong>
-      <span>Actividades correctas</span>
-    </div>
-    <div class="stat">
-      <strong>10</strong>
-      <span>Conceptos principales</span>
-    </div>
+ <!-- ESTADÍSTICAS -->
+
+ <div class="stats">
+  <div class="stat">
+   <strong id="score">0</strong>
+   <span>Puntos obtenidos</span>
   </div>
 
-  <section id="home">
-    <h2 class="section-title">🎮 Elegí cómo aprender</h2>
+  <div class="stat">
+   <strong id="completed">0</strong>
+   <span>Respuestas correctas</span>
+  </div>
 
-    <div class="games">
+  <div class="stat">
+   <strong>11</strong>
+   <span>Conceptos principales</span>
+  </div>
+ </div>
 
-      <div class="game-card" onclick="openGame('crossword')">
-        <div class="game-icon">🧩</div>
-        <h3>Crucigrama</h3>
-        <p>Descubrí palabras económicas a partir de pequeñas pistas.</p>
-      </div>
+ <!-- INICIO -->
 
-      <div class="game-card" onclick="openGame('wordsearch')">
-        <div class="game-icon">🔎</div>
-        <h3>Sopa de letras</h3>
-        <p>Encontrá los conceptos escondidos en la cuadrícula.</p>
-      </div>
+ <section id="home">
 
-      <div class="game-card" onclick="openGame('quiz')">
-        <div class="game-icon">🧠</div>
-        <h3>Adiviná el concepto</h3>
-        <p>Leé una definición y elegí su significado.</p>
-      </div>
+  <h2 class="section-title">🎮 Elegí cómo aprender</h2>
 
-      <div class="game-card" onclick="openGame('flashcards')">
-        <div class="game-icon">🃏</div>
-        <h3>Tarjetas de memoria</h3>
-        <p>Memorizá los conceptos y comprobá cuánto aprendiste.</p>
-      </div>
+  <div class="games">
 
-    </div>
+   <div class="game-card" onclick="openGame('crossword')">
+    <div class="game-icon">🧩</div>
+    <h3>Crucigrama</h3>
+    <p>Descubrí palabras económicas a partir de pequeñas pistas.</p>
+   </div>
 
-    <h2 class="section-title">🌎 Explorá la economía</h2>
+   <div class="game-card" onclick="openGame('wordsearch')">
+    <div class="game-icon">🔎</div>
+    <h3>Sopa de letras</h3>
+    <p>Encontrá los conceptos escondidos en la cuadrícula.</p>
+   </div>
 
-    <div class="games">
+   <div class="game-card" onclick="openGame('quiz')">
+    <div class="game-icon">🧠</div>
+    <h3>Adiviná el concepto</h3>
+    <p>Leé una definición y elegí la palabra correcta.</p>
+   </div>
 
-      <div class="game-card" onclick="showExtra()">
-        <div class="game-icon">📖</div>
-        <h3>Diccionario económico</h3>
-        <p>Descubrí abreviaciones, siglas y palabras del mundo económico.</p>
-      </div>
+  </div>
 
-      <div class="game-card" onclick="showTips()">
-        <div class="game-icon">💡</div>
-        <h3>Datos interesantes</h3>
-        <p>Aprendé curiosidades y significados financieros.</p>
-      </div>
+  <h2 class="section-title">🌎 Explorá la economía</h2>
 
-    </div>
-  </section>
+  <div class="games">
 
-  <section id="game" class="hidden">
-    <button class="back-btn" onclick="goHome()">← Volver al inicio</button>
-    <div id="gameContent"></div>
-  </section>
+   <div class="game-card" onclick="showExtra()">
+    <div class="game-icon">📖</div>
+    <h3>Diccionario económico</h3>
+    <p>Conocé abreviaciones, siglas y conceptos económicos.</p>
+   </div>
 
-  <section id="glossary" class="hidden panel">
-    <button class="back-btn" onclick="goHome()">← Volver</button>
-    <h2>📚 Glosario principal</h2>
-    <p>Estos son los 10 conceptos que aparecen en los juegos.</p>
-    <input class="search" id="mainSearch"
-      placeholder="Buscar un concepto..."
-      oninput="renderGlossary()">
-    <div id="mainGlossary"></div>
-  </section>
+   <div class="game-card" onclick="showTips()">
+    <div class="game-icon">💡</div>
+    <h3>Datos interesantes</h3>
+    <p>Descubrí curiosidades sobre el mundo financiero.</p>
+   </div>
 
-  <section id="extra" class="hidden panel">
-    <button class="back-btn" onclick="goHome()">← Volver</button>
-    <h2>🌎 Diccionario económico ampliado</h2>
-    <p>Más palabras para ampliar tus conocimientos.</p>
-    <input class="search" id="extraSearch"
-      placeholder="Buscar términos..."
-      oninput="renderExtra()">
-    <div id="extraGlossary"></div>
-  </section>
+  </div>
+ </section>
 
-  <section id="tips" class="hidden panel">
-    <button class="back-btn" onclick="goHome()">← Volver</button>
-    <h2>💡 Datos y conceptos interesantes</h2>
-    <div id="tipsContent"></div>
-  </section>
+ <!-- JUEGOS -->
+
+ <section id="game" class="hidden">
+  <button class="back-btn" onclick="goHome()">← Volver al inicio</button>
+  <div id="gameContent"></div>
+ </section>
+
+ <!-- GLOSARIO PRINCIPAL -->
+
+ <section id="glossary" class="hidden panel">
+  <button class="back-btn" onclick="goHome()">← Volver</button>
+  <h2>📚 Glosario principal</h2>
+  <p>Todos los conceptos utilizados en los juegos.</p>
+
+  <input class="search" id="mainSearch"
+   placeholder="Buscar concepto..."
+   oninput="renderGlossary()">
+
+  <div id="mainGlossary"></div>
+ </section>
+
+ <!-- GLOSARIO EXTRA -->
+
+ <section id="extra" class="hidden panel">
+  <button class="back-btn" onclick="goHome()">← Volver</button>
+  <h2>🌎 Diccionario económico ampliado</h2>
+  <p>Otros términos para aprender y ampliar tus conocimientos.</p>
+
+  <input class="search" id="extraSearch"
+   placeholder="Buscar término..."
+   oninput="renderExtra()">
+
+  <div id="extraGlossary"></div>
+ </section>
+
+ <!-- DATOS -->
+
+ <section id="tips" class="hidden panel">
+  <button class="back-btn" onclick="goHome()">← Volver</button>
+  <h2>💡 Datos interesantes</h2>
+  <div id="tipsContent"></div>
+ </section>
 
 </div>
 
 <footer>
-  EconoMente © 2026 · Educación financiera para todos.
-  <br>Aprender es la mejor inversión.
+ EconoMente © 2026
+ <br>Aprender es la mejor inversión.
 </footer>
 
 <script>
 
-// ========================================
-// GLOSARIO PRINCIPAL: ÚNICAS PALABRAS
-// UTILIZADAS EN LOS JUEGOS
-// ========================================
+// ======================================
+// CONCEPTOS PRINCIPALES
+// ======================================
 
 const words = [
+
 {
  word:"ALIAS",
  definition:"Es el nombre que le ponés a tu cuenta bancaria para que otras personas puedan transferirte dinero sin tener que recordar los 22 números del CBU. Podés modificarlo cuando quieras."
 },
+
 {
  word:"BCRA",
  definition:"Banco Central de la República Argentina. Es el organismo que regula el funcionamiento del sistema financiero y establece políticas relacionadas con el dinero y las tasas de interés."
 },
+
 {
  word:"CAJA DE AHORRO",
  definition:"Es una cuenta bancaria gratuita en la que podés depositar dinero, recibir pagos y realizar operaciones. Podés retirar el dinero disponible cuando quieras."
 },
+
 {
  word:"CAPITAL",
  definition:"Es una cantidad de dinero que se invierte o se pide prestada. En un préstamo, es el dinero que recibís y luego tenés que devolver."
 },
+
 {
  word:"CBU",
  definition:"Son las iniciales de Clave Bancaria Uniforme. Es un código de 22 números que identifica de manera única a una cuenta bancaria."
 },
+
 {
  word:"CFT",
  definition:"Costo Financiero Total. Representa el costo completo de un préstamo o servicio financiero, incluyendo intereses, impuestos y otros cargos."
 },
+
 {
  word:"CUENTA CORRIENTE",
  definition:"Es una cuenta bancaria que permite realizar más operaciones que una caja de ahorro, como emitir y recibir cheques y, según las condiciones acordadas, utilizar dinero en descubierto."
 },
+
 {
  word:"DEPOSITO",
  definition:"Es la acción de ingresar dinero en una cuenta bancaria. Puede realizarse en efectivo o mediante un cheque."
 },
+
 {
  word:"INSTITUCIONES FINANCIERAS",
  definition:"Son entidades autorizadas y reguladas que ofrecen servicios financieros. Algunos ejemplos son los bancos y las compañías financieras."
 },
+
 {
  word:"INTERES",
  definition:"Es el dinero que se paga por un préstamo o se recibe por una inversión. Se expresa mediante un porcentaje llamado tasa de interés."
 },
+
 {
  word:"PIN",
  definition:"Es una clave personal de cuatro números que permite acceder a determinados servicios, como un cajero automático."
 }
+
 ];
 
-// ========================================
-// GLOSARIO AMPLIADO
-// ESTOS TÉRMINOS NO APARECEN EN LOS JUEGOS
-// ========================================
+// ======================================
+// CONCEPTOS ADICIONALES
+// NO APARECEN EN LOS JUEGOS
+// ======================================
 
 const extras = [
-["AFIP","Administración Federal de Ingresos Públicos. Era el organismo encargado de la recaudación de impuestos y del control aduanero en Argentina. Fue reemplazado en 2024 por ARCA."],
+
+["AFIP","Administración Federal de Ingresos Públicos. Fue el organismo encargado de la recaudación de impuestos y el control aduanero en Argentina. Fue reemplazado en 2024 por ARCA."],
+
 ["ARCA","Agencia de Recaudación y Control Aduanero. Organismo argentino encargado de funciones tributarias y aduaneras."],
+
 ["IVA","Impuesto al Valor Agregado. Es un impuesto aplicado al consumo de bienes y servicios."],
-["PBI","Producto Bruto Interno. Es el valor de los bienes y servicios finales producidos en un país durante un período determinado."],
+
+["PBI","Producto Bruto Interno. Es el valor de los bienes y servicios finales producidos en un país durante un período."],
+
 ["IPC","Índice de Precios al Consumidor. Mide la variación promedio de los precios de una canasta de bienes y servicios."],
+
 ["INDEC","Instituto Nacional de Estadística y Censos. Organismo argentino que produce estadísticas oficiales."],
+
 ["INFLACIÓN","Es el aumento generalizado y sostenido de los precios de bienes y servicios durante un período."],
-["DEF LACIÓN","Es una disminución generalizada y sostenida de los precios de bienes y servicios."],
+
+["DEFLACIÓN","Es una disminución generalizada y sostenida de los precios de bienes y servicios."],
+
 ["DEVALUACIÓN","Es la reducción del valor de una moneda respecto de otras monedas, en un sistema cambiario que permite esa modificación."],
+
 ["TIPO DE CAMBIO","Es el precio de una moneda expresado en otra moneda."],
+
 ["MONEDA","Es el medio de intercambio utilizado para realizar pagos y expresar el valor de bienes y servicios."],
+
 ["LIQUIDEZ","Es la facilidad con la que un activo puede convertirse en dinero disponible."],
+
 ["AHORRO","Es la parte del ingreso que no se utiliza para gastos inmediatos y se reserva para el futuro."],
+
 ["INVERSIÓN","Es el uso de recursos con la expectativa de obtener beneficios o ingresos futuros."],
+
 ["PRESUPUESTO","Es una planificación de ingresos y gastos durante un período determinado."],
+
 ["TASA DE INTERÉS","Es el porcentaje que se paga por un préstamo o se recibe por una inversión."],
+
 ["UVA","Unidad de Valor Adquisitivo. Es una unidad utilizada en Argentina cuyo valor se actualiza según la inflación."],
+
 ["DÓLAR","Es la moneda oficial de Estados Unidos y una de las monedas más utilizadas en el comercio internacional."],
+
 ["BONO","Es un instrumento financiero mediante el cual un emisor obtiene financiamiento y se compromete a realizar determinados pagos."],
+
 ["ACCIONES","Son partes del capital de una sociedad. Quien posee una acción tiene una participación en esa empresa."],
+
 ["MERCADO","Es el espacio o sistema donde compradores y vendedores intercambian bienes, servicios o activos."],
+
 ["OFERTA","Es la cantidad de un bien o servicio que los vendedores están dispuestos a ofrecer a distintos precios."],
+
 ["DEMANDA","Es la cantidad de un bien o servicio que los consumidores desean y pueden comprar."],
+
 ["COSTO","Es el valor de los recursos utilizados para producir un bien o prestar un servicio."],
+
 ["GANANCIA","Es el resultado positivo que queda cuando los ingresos superan los costos."],
+
 ["PÉRDIDA","Es el resultado negativo que ocurre cuando los costos superan los ingresos."],
+
 ["SALARIO","Es la remuneración que recibe una persona por su trabajo."],
+
 ["IMPUESTO","Es un pago obligatorio establecido por el Estado para financiar servicios y gastos públicos."],
+
 ["DÉFICIT","Se produce cuando los gastos superan los ingresos en un período."],
+
 ["SUPERÁVIT","Se produce cuando los ingresos superan los gastos en un período."],
+
 ["ARANCEL","Es un impuesto o derecho aplicado a determinados productos que ingresan o salen de un país."],
+
 ["PYME","Pequeña y Mediana Empresa. Es una empresa que se clasifica según determinados criterios, como su actividad y tamaño."],
+
 ["CUIT","Clave Única de Identificación Tributaria. Identifica a personas y empresas para realizar trámites fiscales en Argentina."],
+
 ["CUIL","Código Único de Identificación Laboral. Se utiliza para identificar a las personas en registros laborales y de seguridad social."],
+
 ["ATM","Automated Teller Machine. Expresión inglesa utilizada para referirse a los cajeros automáticos."],
+
 ["CRIPTOMONEDA","Es un activo digital que utiliza técnicas criptográficas y puede funcionar mediante redes descentralizadas."],
+
 ["BANCO","Es una institución financiera que ofrece servicios como depósitos, transferencias y préstamos."],
+
 ["CRÉDITO","Es la posibilidad de recibir dinero o bienes con el compromiso de devolverlos bajo determinadas condiciones."]
+
 ];
 
-// ========================================
-// DATOS GENERALES
-// ========================================
+// ======================================
+// SISTEMA GENERAL
+// ======================================
 
-let score = 0;
-let completed = 0;
-let quizIndex = 0;
-let flashIndex = 0;
-let flashBack = false;
-let selectedCells = [];
-let foundWords = [];
-let crossAnswers = {};
-let currentCross = 0;
+let score=0;
+let completed=0;
 
 function updateStats() {
- document.getElementById("score").textContent = score;
- document.getElementById("completed").textContent = completed;
+ document.getElementById("score").textContent=score;
+ document.getElementById("completed").textContent=completed;
 }
 
 function award(points=10) {
- score += points;
+ score+=points;
  completed++;
  updateStats();
 }
 
 function hideSections() {
  ["home","game","glossary","extra","tips"].forEach(id=>{
-   document.getElementById(id).classList.add("hidden");
+  document.getElementById(id).classList.add("hidden");
  });
 }
 
@@ -583,7 +649,6 @@ function openGame(name) {
  document.getElementById("game").classList.remove("hidden");
 
  if(name==="quiz") startQuiz();
- if(name==="flashcards") startFlash();
  if(name==="wordsearch") startWordSearch();
  if(name==="crossword") startCrossword();
 }
@@ -606,11 +671,17 @@ function showTips() {
  renderTips();
 }
 
+// ======================================
+// GLOSARIO PRINCIPAL
+// ======================================
+
 function renderGlossary() {
- const q=(document.getElementById("mainSearch").value||"").toLowerCase();
- document.getElementById("mainGlossary").innerHTML =
- words.filter(w=>(w.word+" "+w.definition).toLowerCase().includes(q))
- .map(w=>`
+ const q=document.getElementById("mainSearch").value.toLowerCase();
+
+ document.getElementById("mainGlossary").innerHTML=
+ words.filter(w=>
+  (w.word+" "+w.definition).toLowerCase().includes(q)
+ ).map(w=>`
   <div class="glossary-item">
    <h3>${w.word}</h3>
    <p>${w.definition}</p>
@@ -618,11 +689,17 @@ function renderGlossary() {
  `).join("");
 }
 
+// ======================================
+// DICCIONARIO EXTRA
+// ======================================
+
 function renderExtra() {
- const q=(document.getElementById("extraSearch").value||"").toLowerCase();
- document.getElementById("extraGlossary").innerHTML =
- extras.filter(w=>(w[0]+" "+w[1]).toLowerCase().includes(q))
- .map(w=>`
+ const q=document.getElementById("extraSearch").value.toLowerCase();
+
+ document.getElementById("extraGlossary").innerHTML=
+ extras.filter(w=>
+  (w[0]+" "+w[1]).toLowerCase().includes(q)
+ ).map(w=>`
   <div class="glossary-item">
    <h3>${w[0]}</h3>
    <p>${w[1]}</p>
@@ -630,16 +707,23 @@ function renderExtra() {
  `).join("");
 }
 
+// ======================================
+// DATOS INTERESANTES
+// ======================================
+
 function renderTips() {
+
  const tips=[
- ["💡","El dinero no siempre tiene forma física","También puede existir como dinero electrónico en cuentas y billeteras virtuales."],
- ["🏦","Los bancos no son bancos centrales","Los bancos comerciales ofrecen servicios financieros; el Banco Central regula el sistema monetario y financiero."],
- ["📈","Los precios pueden cambiar","La inflación mide el aumento generalizado de los precios, no el aumento de un solo producto."],
- ["🌎","La economía está conectada","Las decisiones económicas de un país pueden influir en el comercio y los precios de otros países."],
- ["💳","Una tarjeta no es una cuenta","Una tarjeta de débito permite operar sobre una cuenta bancaria, pero no es la cuenta en sí misma."],
- ["📊","Ahorrar e invertir no son lo mismo","El ahorro reserva dinero; la inversión busca obtener un rendimiento y puede implicar riesgos."]
+  ["💡","El dinero no siempre tiene forma física","También puede existir como dinero electrónico en cuentas y billeteras virtuales."],
+  ["🏦","Los bancos y el Banco Central son diferentes","Los bancos comerciales ofrecen servicios financieros, mientras que el Banco Central regula el sistema monetario y financiero."],
+  ["📈","Los precios pueden cambiar","La inflación mide el aumento generalizado de los precios, no solamente el aumento de un producto."],
+  ["🌎","La economía está conectada","Las decisiones económicas de un país pueden influir en el comercio y los precios de otros países."],
+  ["💳","Una tarjeta no es una cuenta bancaria","Una tarjeta de débito permite operar sobre una cuenta, pero no es la cuenta en sí misma."],
+  ["📊","Ahorrar e invertir no son lo mismo","El ahorro reserva dinero; la inversión busca obtener un rendimiento y puede implicar riesgos."]
  ];
- document.getElementById("tipsContent").innerHTML=tips.map(t=>`
+
+ document.getElementById("tipsContent").innerHTML=
+ tips.map(t=>`
   <div class="glossary-item">
    <h3>${t[0]} ${t[1]}</h3>
    <p>${t[2]}</p>
@@ -647,35 +731,47 @@ function renderTips() {
  `).join("");
 }
 
-// ========================================
-// JUEGO 1: ADIVINÁ EL CONCEPTO
-// ========================================
+// ======================================
+// JUEGO: ADIVINÁ EL CONCEPTO
+// ======================================
+
+let quizIndex=0;
+let quizAnswered=false;
 
 function startQuiz() {
  quizIndex=0;
+ quizAnswered=false;
+
  document.getElementById("gameContent").innerHTML=`
   <h2>🧠 Adiviná el concepto</h2>
-  <p>Leé la definición y elegí la respuesta correcta.</p>
+  <p>Leé la definición y seleccioná la respuesta correcta.</p>
   <div id="quizArea"></div>
  `;
+
  renderQuiz();
 }
 
 function renderQuiz() {
+
  if(quizIndex>=words.length) {
   document.getElementById("quizArea").innerHTML=`
-   <h3>🎉 ¡Terminaste!</h3>
-   <p>Completaste todas las preguntas.</p>
+   <div class="definition">
+    <h2>🎉 ¡Felicitaciones!</h2>
+    <p>Terminaste todas las preguntas.</p>
+   </div>
    <button class="primary-btn" onclick="startQuiz()">Volver a jugar</button>
   `;
   return;
  }
 
+ quizAnswered=false;
+
  const item=words[quizIndex];
- const options=[item.word];
+ let options=[item.word];
 
  while(options.length<4) {
-  const candidate=words[Math.floor(Math.random()*words.length)].word;
+  let candidate=words[Math.floor(Math.random()*words.length)].word;
+
   if(!options.includes(candidate)) options.push(candidate);
  }
 
@@ -683,364 +779,606 @@ function renderQuiz() {
 
  document.getElementById("quizArea").innerHTML=`
   <p>Pregunta ${quizIndex+1} de ${words.length}</p>
+
   <div class="definition">${item.definition}</div>
+
   ${options.map(o=>`
-   <button class="quiz-option" onclick="answerQuiz('${o.replace(/'/g,"\\'")}')">${o}</button>
+   <button class="quiz-option" onclick="answerQuiz(this,'${o}')"
+   style="display:block;width:100%;text-align:left;
+   background:white;border:2px solid #e3e5f0;
+   border-radius:10px;padding:14px;margin:8px 0">
+    ${o}
+   </button>
   `).join("")}
+
   <div id="quizFeedback" class="feedback"></div>
  `;
+
 }
 
-function answerQuiz(answer) {
+function answerQuiz(button,answer) {
+
+ if(quizAnswered) return;
+ quizAnswered=true;
+
  const correct=words[quizIndex].word;
  const feedback=document.getElementById("quizFeedback");
+
+ document.querySelectorAll(".quiz-option").forEach(b=>{
+  b.disabled=true;
+ });
 
  if(answer===correct) {
   feedback.textContent="¡Correcto! +10 puntos 🎉";
   feedback.style.color="#16a985";
+  button.style.borderColor="#18b99b";
   award(10);
  } else {
-  feedback.textContent="¡Casi! La respuesta era: "+correct;
+  feedback.textContent="La respuesta correcta era: "+correct;
   feedback.style.color="#e65b78";
  }
 
- document.querySelectorAll(".quiz-option").forEach(b=>b.disabled=true);
+ const next=document.createElement("button");
+ next.className="primary-btn";
+ next.textContent="Siguiente →";
+ next.onclick=()=>{
+  quizIndex++;
+  renderQuiz();
+ };
 
- const btn=document.createElement("button");
- btn.className="primary-btn";
- btn.textContent="Siguiente →";
- btn.onclick=()=>{quizIndex++;renderQuiz();};
- feedback.after(btn);
+ feedback.after(next);
 }
 
-// ========================================
-// JUEGO 2: TARJETAS DE MEMORIA
-// ========================================
-
-function startFlash() {
- flashIndex=0;
- flashBack=false;
- renderFlash();
-}
-
-function renderFlash() {
- const item=words[flashIndex%words.length];
-
- document.getElementById("gameContent").innerHTML=`
-  <h2>🃏 Tarjetas de memoria</h2>
-  <p>Intentá recordar el significado de cada concepto.</p>
-  <div class="flashcard" id="flashCard">
-   ${flashBack?item.definition:item.word}
-  </div>
-  <button class="primary-btn" onclick="flipFlash()">🔄 Dar vuelta</button>
-  <button class="secondary-btn" onclick="nextFlash()">Siguiente →</button>
-  <p>Tarjeta ${(flashIndex%words.length)+1} de ${words.length}</p>
- `;
-}
-
-function flipFlash() {
- flashBack=!flashBack;
- renderFlash();
-}
-
-function nextFlash() {
- flashIndex++;
- flashBack=false;
- renderFlash();
-}
-
-// ========================================
-// JUEGO 3: SOPA DE LETRAS
-// ========================================
+// ======================================
+// JUEGO: SOPA DE LETRAS
+// ======================================
 
 const SIZE=12;
+
 let grid=[];
 let targetWords=[];
-let dragStart=null;
+let foundWords=[];
+let selectedCells=[];
+let selectionStart=null;
+let wordGridElement=null;
 
 function normalize(s) {
- return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+ return s.normalize("NFD")
+ .replace(/[\u0300-\u036f]/g,"")
  .replace(/[^A-Z]/g,"");
 }
 
 function startWordSearch() {
+
  foundWords=[];
  selectedCells=[];
- grid=Array.from({length:SIZE},()=>Array(SIZE).fill(""));
- targetWords=words.map(w=>normalize(w.word)).filter(w=>w.length<=SIZE);
+ selectionStart=null;
 
+ grid=Array.from(
+  {length:SIZE},
+  ()=>Array(SIZE).fill("")
+ );
+
+ targetWords=words
+ .map(w=>normalize(w.word))
+ .filter(w=>w.length<=SIZE);
+
+ // Colocación horizontal y vertical.
  targetWords.forEach(word=>{
+
   let placed=false;
-  for(let tries=0;tries<150&&!placed;tries++) {
-   const horizontal=Math.random()<.5;
+
+  for(let tries=0;tries<300&&!placed;tries++) {
+
+   const horizontal=Math.random()<0.5;
+
    const dr=horizontal?0:1;
    const dc=horizontal?1:0;
-   const r=Math.floor(Math.random()*(SIZE-(dr?word.length:0)));
-   const c=Math.floor(Math.random()*(SIZE-(dc?word.length:0)));
-   let ok=true;
+
+   const r=Math.floor(
+    Math.random()*(SIZE-(dr?word.length:0))
+   );
+
+   const c=Math.floor(
+    Math.random()*(SIZE-(dc?word.length:0))
+   );
+
+   let valid=true;
 
    for(let i=0;i<word.length;i++) {
+
     const existing=grid[r+dr*i][c+dc*i];
-    if(existing!==""&&existing!==word[i]) ok=false;
+
+    if(existing!==""&&existing!==word[i]) {
+     valid=false;
+     break;
+    }
    }
 
-   if(ok) {
-    for(let i=0;i<word.length;i++) grid[r+dr*i][c+dc*i]=word[i];
+   if(valid) {
+
+    for(let i=0;i<word.length;i++) {
+     grid[r+dr*i][c+dc*i]=word[i];
+    }
+
     placed=true;
    }
   }
+
  });
 
- for(let r=0;r<SIZE;r++)
-  for(let c=0;c<SIZE;c++)
-   if(!grid[r][c]) grid[r][c]=String.fromCharCode(65+Math.floor(Math.random()*26));
+ // Completar casillas vacías.
+
+ for(let r=0;r<SIZE;r++) {
+  for(let c=0;c<SIZE;c++) {
+
+   if(grid[r][c]==="") {
+    grid[r][c]=String.fromCharCode(
+     65+Math.floor(Math.random()*26)
+    );
+   }
+
+  }
+ }
 
  renderWordSearch();
 }
 
 function renderWordSearch() {
+
  document.getElementById("gameContent").innerHTML=`
+
   <h2>🔎 Sopa de letras</h2>
-  <p>Seleccioná letras consecutivas para encontrar los conceptos.</p>
-  <div class="word-grid" id="wordGrid">
-   ${grid.flatMap((row,r)=>row.map((letter,c)=>`
-    <button class="cell" data-r="${r}" data-c="${c}"
-     onclick="selectWordCell(${r},${c})">${letter}</button>
-   `)).join("")}
+
+  <p>Encontrá todos los conceptos económicos.</p>
+
+  <div class="instructions">
+   <b>¿Cómo jugar?</b><br>
+   1. Hacé clic en la primera letra de una palabra.<br>
+   2. Después hacé clic en su última letra.<br>
+   3. Podés seleccionar palabras de cualquier longitud,
+   horizontal o verticalmente, hacia adelante o hacia atrás.<br>
+   4. Las palabras encontradas quedarán marcadas en verde.
   </div>
-  <h3>Palabras por encontrar:</h3>
-  <div id="wordList"></div>
-  <p id="wordFeedback" class="feedback"></p>
-  <button class="secondary-btn" onclick="startWordSearch()">Nueva sopa</button>
+
+  <div class="word-grid" id="wordGrid">
+
+   ${grid.map((row,r)=>row.map((letter,c)=>`
+    <button class="cell"
+     data-r="${r}"
+     data-c="${c}"
+     onclick="selectWordCell(${r},${c})">
+     ${letter}
+    </button>
+   `).join("")).join("")}
+
+  </div>
+
+  <h3>📌 Palabras por encontrar</h3>
+
+  <div class="word-list" id="wordList"></div>
+
+  <div class="feedback" id="wordFeedback">
+   Seleccioná la primera letra para comenzar.
+  </div>
+
+  <button class="secondary-btn" onclick="startWordSearch()">
+   🔄 Generar nueva sopa
+  </button>
+
  `;
+
+ wordGridElement=document.getElementById("wordGrid");
 
  renderWordList();
 }
 
 function renderWordList() {
- document.getElementById("wordList").innerHTML=words.map(w=>{
-  const found=foundWords.includes(normalize(w.word));
-  return `<span style="display:inline-block;margin:5px;padding:7px 9px;
-   background:${found?'#c9f3e5':'#eeeaff'};
-   border-radius:8px;${found?'text-decoration:line-through':''}">
-   ${w.word}
-  </span>`;
+
+ document.getElementById("wordList").innerHTML=
+ words.map(w=>{
+
+  const normalized=normalize(w.word);
+  const found=foundWords.includes(normalized);
+
+  return `
+   <span class="word-tag ${found?'done':''}">
+    ${found?'✓ ':''}${w.word}
+   </span>
+  `;
+
  }).join("");
+
 }
+
+// NUEVA SELECCIÓN DE PALABRAS
+// Se guardan solamente los dos extremos.
+// La distancia entre ellos puede ser cualquiera.
 
 function selectWordCell(r,c) {
+
  const key=r+","+c;
- const last=selectedCells[selectedCells.length-1];
 
- if(last && last.r===r && last.c===c) return;
+ // Si todavía no hay punto inicial,
+ // guardamos la primera letra.
 
- if(selectedCells.length>=2) {
-  selectedCells=[];
- }
+ if(selectionStart===null) {
 
- selectedCells.push({r,c});
+  selectionStart={r,c};
 
- document.querySelectorAll(".cell").forEach(b=>{
-  b.classList.remove("selected");
- });
+  clearSelection();
 
- selectedCells.forEach(p=>{
-  document.querySelector(`[data-r="${p.r}"][data-c="${p.c}"]`)
-   ?.classList.add("selected");
- });
+  markCell(r,c,"selected");
 
- if(selectedCells.length===2) checkSelectedWord();
-}
+  document.getElementById("wordFeedback").textContent=
+   "Ahora seleccioná la última letra de la palabra.";
 
-function checkSelectedWord() {
- const a=selectedCells[0], b=selectedCells[1];
- const dr=Math.sign(b.r-a.r), dc=Math.sign(b.c-a.c);
- const distance=Math.max(Math.abs(b.r-a.r),Math.abs(b.c-a.c));
- const straight=dr===0||dc===0||Math.abs(b.r-a.r)===Math.abs(b.c-a.c);
-
- if(!straight) {
-  document.getElementById("wordFeedback").textContent="Seleccioná una línea recta.";
-  selectedCells=[];
   return;
  }
+
+ // Si se vuelve a hacer clic en el inicio,
+ // se cancela la selección.
+
+ if(selectionStart.r===r&&selectionStart.c===c) {
+
+  selectionStart=null;
+  clearSelection();
+
+  document.getElementById("wordFeedback").textContent=
+   "Selección cancelada. Elegí otra primera letra.";
+
+  return;
+ }
+
+ // Se comprueba el recorrido completo.
+ checkSelectedWord(r,c);
+
+ selectionStart=null;
+}
+
+function clearSelection() {
+
+ document.querySelectorAll(".cell.selected").forEach(cell=>{
+  cell.classList.remove("selected");
+ });
+
+}
+
+function markCell(r,c,className) {
+
+ const cell=document.querySelector(
+  `.cell[data-r="${r}"][data-c="${c}"]`
+ );
+
+ if(cell) cell.classList.add(className);
+}
+
+function checkSelectedWord(endR,endC) {
+
+ const start=selectionStart;
+
+ const rowDiff=endR-start.r;
+ const colDiff=endC-start.c;
+
+ const dr=Math.sign(rowDiff);
+ const dc=Math.sign(colDiff);
+
+ // Solo se admiten líneas horizontales y verticales.
+ // Las palabras pueden tener cualquier cantidad de letras.
+
+ if(dr!==0&&dc!==0) {
+
+  document.getElementById("wordFeedback").textContent=
+   "Elegí una línea horizontal o vertical.";
+
+  clearSelection();
+  return;
+ }
+
+ const distance=Math.max(
+  Math.abs(rowDiff),
+  Math.abs(colDiff)
+ );
 
  let result="";
  let positions=[];
 
  for(let i=0;i<=distance;i++) {
-  result+=grid[a.r+dr*i][a.c+dc*i];
-  positions.push({r:a.r+dr*i,c:a.c+dc*i});
+
+  const r=start.r+dr*i;
+  const c=start.c+dc*i;
+
+  result+=grid[r][c];
+
+  positions.push({r,c});
  }
 
- const reversed=result.split("").reverse().join("");
+ const reverse=result.split("").reverse().join("");
+
  const found=targetWords.find(w=>
-  (w===result||w===reversed)&&!foundWords.includes(w)
+  (w===result||w===reverse)&&!foundWords.includes(w)
  );
 
  if(found) {
+
   foundWords.push(found);
+
   positions.forEach(p=>{
-   document.querySelector(`[data-r="${p.r}"][data-c="${p.c}"]`)
-   ?.classList.add("found");
+   markCell(p.r,p.c,"found");
   });
-  document.getElementById("wordFeedback").textContent="¡Encontraste "+found+"! +10 puntos 🎉";
+
+  document.getElementById("wordFeedback").textContent=
+   "¡Excelente! Encontraste "+found+" 🎉 +10 puntos";
+
+  document.getElementById("wordFeedback").style.color="#16a985";
+
   award(10);
+
   renderWordList();
-  if(foundWords.length===targetWords.length)
-   document.getElementById("wordFeedback").textContent="¡Excelente! Encontraste todas las palabras.";
+
+  if(foundWords.length===targetWords.length) {
+
+   document.getElementById("wordFeedback").textContent=
+    "🏆 ¡FELICITACIONES! Encontraste todas las palabras.";
+
+  }
+
  } else {
-  document.getElementById("wordFeedback").textContent="Todavía no. ¡Probá otra combinación!";
+
+  document.getElementById("wordFeedback").textContent=
+   "Esa selección no corresponde a una palabra pendiente. ¡Probá otra vez!";
+
+  document.getElementById("wordFeedback").style.color="#e65b78";
+
  }
 
- selectedCells=[];
+ clearSelection();
+
 }
 
-// ========================================
-// JUEGO 4: CRUCIGRAMA INTERACTIVO
-// ========================================
-
-// Tablero con 12 columnas.
-// Las palabras se cruzan en las posiciones indicadas.
+// ======================================
+// JUEGO: CRUCIGRAMA
+// ======================================
 
 const crosswordEntries=[
- {word:"ALIAS",r:0,c:0,dir:"H",clue:"Nombre que elegís para identificar tu cuenta bancaria al recibir transferencias."},
- {word:"BCRA",r:0,c:2,dir:"V",clue:"Sigla del Banco Central de la República Argentina."},
- {word:"CAPITAL",r:0,c:5,dir:"V",clue:"Dinero que se invierte o se solicita prestado."},
- {word:"CBU",r:2,c:0,dir:"V",clue:"Código bancario de 22 números que identifica una cuenta."},
- {word:"CFT",r:5,c:0,dir:"H",clue:"Sigla de Costo Financiero Total."},
- {word:"PIN",r:7,c:0,dir:"H",clue:"Clave personal de cuatro números utilizada en el cajero."}
+
+ {
+  word:"ALIAS",
+  r:0,c:0,dir:"H",
+  clue:"Nombre que elegís para identificar tu cuenta bancaria al recibir transferencias."
+ },
+
+ {
+  word:"BCRA",
+  r:0,c:2,dir:"V",
+  clue:"Sigla del Banco Central de la República Argentina."
+ },
+
+ {
+  word:"CAPITAL",
+  r:0,c:5,dir:"V",
+  clue:"Dinero que se invierte o se solicita prestado."
+ },
+
+ {
+  word:"CBU",
+  r:2,c:0,dir:"V",
+  clue:"Código bancario de 22 números que identifica una cuenta."
+ },
+
+ {
+  word:"CFT",
+  r:5,c:0,dir:"H",
+  clue:"Sigla de Costo Financiero Total."
+ },
+
+ {
+  word:"PIN",
+  r:7,c:0,dir:"H",
+  clue:"Clave personal de cuatro números utilizada en el cajero."
+ }
+
 ];
 
+let crossAnswers={};
+let crossCompleted=false;
+
 function makeCrossLayout() {
- const rows=12,cols=12;
- let layout=Array.from({length:rows},()=>Array(cols).fill(null));
+
+ const layout=Array.from(
+  {length:12},
+  ()=>Array(12).fill(null)
+ );
 
  crosswordEntries.forEach((entry,index)=>{
+
   for(let i=0;i<entry.word.length;i++) {
+
    const r=entry.r+(entry.dir==="V"?i:0);
    const c=entry.c+(entry.dir==="H"?i:0);
-   if(r>=rows||c>=cols) continue;
-   if(!layout[r][c]) layout[r][c]={letter:entry.word[i],numbers:[]};
+
+   if(!layout[r][c]) {
+    layout[r][c]={
+     letter:entry.word[i],
+     numbers:[]
+    };
+   }
+
    layout[r][c].numbers.push(index);
+
   }
+
  });
 
  return layout;
 }
 
 function startCrossword() {
+
  crossAnswers={};
- currentCross=0;
+ crossCompleted=false;
+
  renderCrossword();
 }
 
 function renderCrossword() {
+
  const layout=makeCrossLayout();
+
  let html=`
+
   <h2>🧩 Crucigrama económico</h2>
-  <p>Leé las pistas e ingresá las respuestas en el tablero.</p>
+
+  <p>Leé las pistas y completá las palabras en el tablero.</p>
+
   <div class="crossword">
  `;
 
  for(let r=0;r<12;r++) {
+
   for(let c=0;c<12;c++) {
+
    const cell=layout[r][c];
+
    if(!cell) {
+
     html+=`<div class="cross-cell blocked"></div>`;
+
    } else {
+
     const key=r+"-"+c;
-    const value=crossAnswers[key]||"";
-    html+=`<input maxlength="1" class="cross-cell"
-      data-key="${key}" value="${value}"
-      aria-label="Fila ${r+1}, columna ${c+1}"
+
+    html+=`
+     <input
+      maxlength="1"
+      class="cross-cell"
+      data-key="${key}"
+      value="${crossAnswers[key]||''}"
       oninput="setCrossLetter('${key}',this.value)"
-      onfocus="focusCrossCell('${key}')">`;
+     >
+    `;
+
    }
+
   }
+
  }
+
  html+=`</div><h3>📌 Pistas</h3>`;
 
  crosswordEntries.forEach((e,i)=>{
+
   html+=`
    <div class="clue">
+
     <b>${i+1}. ${e.dir==="H"?"Horizontal":"Vertical"}</b>
+
     <p>${e.clue}</p>
-    <button class="secondary-btn" onclick="focusCrossEntry(${i})">
-      Completar palabra
+
+    <button class="secondary-btn"
+     onclick="focusCrossEntry(${i})">
+     Completar palabra
     </button>
+
    </div>
   `;
+
  });
 
  html+=`
-  <button class="primary-btn" onclick="checkCrossword()">Comprobar respuestas</button>
-  <p class="feedback" id="crossFeedback"></p>
+  <button class="primary-btn" onclick="checkCrossword()">
+   Comprobar respuestas
+  </button>
+
+  <p id="crossFeedback" class="feedback"></p>
  `;
 
  document.getElementById("gameContent").innerHTML=html;
 }
 
-function focusCrossCell(key) {
- const [r,c]=key.split("-").map(Number);
- const layout=makeCrossLayout();
- const cell=layout[r][c];
- if(cell) currentCross=cell.numbers[0];
-}
-
 function focusCrossEntry(index) {
- currentCross=index;
+
  const e=crosswordEntries[index];
 
  for(let i=0;i<e.word.length;i++) {
+
   const r=e.r+(e.dir==="V"?i:0);
   const c=e.c+(e.dir==="H"?i:0);
-  const el=document.querySelector(`[data-key="${r}-${c}"]`);
+
+  const el=document.querySelector(
+   `[data-key="${r}-${c}"]`
+  );
+
   if(el) {
+
    el.focus();
-   break;
+   return;
   }
+
  }
 }
 
 function setCrossLetter(key,value) {
+
  crossAnswers[key]=value.toUpperCase().slice(-1);
+
 }
 
 function checkCrossword() {
+
  let correct=0;
 
  crosswordEntries.forEach(e=>{
+
   let answer="";
+
   for(let i=0;i<e.word.length;i++) {
+
    const r=e.r+(e.dir==="V"?i:0);
    const c=e.c+(e.dir==="H"?i:0);
+
    answer+=crossAnswers[r+"-"+c]||"";
+
   }
+
   if(answer===e.word) correct++;
+
  });
 
  const feedback=document.getElementById("crossFeedback");
 
  if(correct===crosswordEntries.length) {
-  feedback.textContent="¡Crucigrama completo! ¡Excelente trabajo! 🎉";
+
+  feedback.textContent=
+   "🎉 ¡Crucigrama completo! Excelente trabajo.";
+
   feedback.style.color="#16a985";
-  if(!window.crossCompleted) {
-   window.crossCompleted=true;
+
+  if(!crossCompleted) {
+   crossCompleted=true;
    award(50);
   }
+
  } else {
-  feedback.textContent=`Tenés ${correct} de ${crosswordEntries.length} palabras correctas. ¡Seguí intentando!`;
-  feedback.style.color="#6558dc";
+
+  feedback.textContent=
+   "Tenés "+correct+" de "+crosswordEntries.length+
+   " palabras correctas. ¡Seguí intentando!";
+
+  feedback.style.color= "#6558dc";
+
  }
+
 }
 
-// ========================================
-// INICIO
-// ========================================
+// ======================================
+// INICIALIZACIÓN
+// ======================================
 
 updateStats();
 goHome();
 
 </script>
+
 </body>
 </html>
